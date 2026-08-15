@@ -27,8 +27,8 @@ Double-click **`start_invoiceai.bat`**. It will:
 
 ### Option B — Manual
 ```bat
-git clone <repository>
-cd invoiceai
+git clone https://github.com/athikahmd76-stack/Invoice-AI.git
+cd Invoice-AI
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
