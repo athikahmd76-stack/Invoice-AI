@@ -1,0 +1,30 @@
+services:
+  invoiceai:
+    build: .
+    container_name: invoiceai
+    ports:
+      - "8501:8501"
+    environment:
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - OLLAMA_MODEL=qwen3-vl:8b
+      - DATABASE_URL=sqlite:///data/invoiceai.db
+      - MAX_FILE_SIZE_MB=25
+    volumes:
+      - ./data:/app/data
+      - ./uploads:/app/uploads
+      - ./exports:/app/exports
+      - ./logs:/app/logs
+      - ./models:/app/models
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+  # Uncomment to run Ollama itself inside Docker next to InvoiceAI:
+  # ollama:
+  #   image: ollama/ollama:latest
+  #   container_name: ollama
+  #   ports:
+  #     - "11434:11434"
+  #   volumes:
+  #     - ./models/ollama:/root/.ollama
+  #   restart: unless-stopped
