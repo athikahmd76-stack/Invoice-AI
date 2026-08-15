@@ -1,6 +1,6 @@
 # InvoiceAI — AI-powered Invoice Extractor
 
-InvoiceAI is a **free, self-hosted, fully local** invoice processing application for Windows (and Docker).
+InvoiceAI is a **free, self-hosted, fully local** invoice processing application for Windows (and Docker) created by Athik Ahamed M.
 It extracts structured invoice data (headers, line items, GST taxes, totals) from PDF / JPG / JPEG / PNG / WEBP
 files using local OCR (**PaddleOCR**) and a local AI (**Ollama**), stores everything in **SQLite**, and lets you
 search, review, validate, report and export to Excel/CSV.
